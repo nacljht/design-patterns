@@ -1,0 +1,17 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "prototype",
+    srcs = ["prototype.cc"],
+    hdrs = ["prototype.h"],
+    visibility = ["//visibility:public"],
+)
+
+cc_test(
+    name = "prototype_test",
+    srcs = ["prototype_test.cc"],
+    deps = [
+        ":prototype",
+        "@googletest//:gtest_main",
+    ],
+)
