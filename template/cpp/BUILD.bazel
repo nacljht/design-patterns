@@ -1,0 +1,17 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "template",
+    srcs = ["template.cc"],
+    hdrs = ["template.h"],
+    visibility = ["//visibility:public"],
+)
+
+cc_test(
+    name = "template_test",
+    srcs = ["template_test.cc"],
+    deps = [
+        ":template",
+        "@googletest//:gtest_main",
+    ],
+)
