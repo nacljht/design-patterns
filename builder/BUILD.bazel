@@ -1,0 +1,14 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "builder",
+    srcs = ["builder.go"],
+    importpath = "design-pattern/builder",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "builder_test",
+    srcs = ["builder_test.go"],
+    embed = [":builder"],
+)

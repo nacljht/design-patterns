@@ -1,0 +1,17 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "observer",
+    srcs = ["observer.cc"],
+    hdrs = ["observer.h"],
+    visibility = ["//visibility:public"],
+)
+
+cc_test(
+    name = "observer_test",
+    srcs = ["observer_test.cc"],
+    deps = [
+        ":observer",
+        "@googletest//:gtest_main",
+    ],
+)
