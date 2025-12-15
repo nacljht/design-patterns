@@ -1,0 +1,17 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "abstract_factory",
+    srcs = ["abstract_factory.cc"],
+    hdrs = ["abstract_factory.h"],
+    visibility = ["//visibility:public"],
+)
+
+cc_test(
+    name = "abstract_factory_test",
+    srcs = ["abstract_factory_test.cc"],
+    deps = [
+        ":abstract_factory",
+        "@googletest//:gtest_main",
+    ],
+)

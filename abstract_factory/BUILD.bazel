@@ -1,0 +1,14 @@
+load("@rules_go//go:def.bzl", "go_library", "go_test")
+
+go_library(
+    name = "abstract_factory",
+    srcs = ["abstract_factory.go"],
+    importpath = "design-pattern/abstract_factory",
+    visibility = ["//visibility:public"],
+)
+
+go_test(
+    name = "abstract_factory_test",
+    srcs = ["abstract_factory_test.go"],
+    embed = [":abstract_factory"],
+)
