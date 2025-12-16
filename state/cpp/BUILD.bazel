@@ -1,0 +1,17 @@
+load("@rules_cc//cc:defs.bzl", "cc_library", "cc_test")
+
+cc_library(
+    name = "state",
+    srcs = ["state.cc"],
+    hdrs = ["state.h"],
+    visibility = ["//visibility:public"],
+)
+
+cc_test(
+    name = "state_test",
+    srcs = ["state_test.cc"],
+    deps = [
+        ":state",
+        "@googletest//:gtest_main",
+    ],
+)
